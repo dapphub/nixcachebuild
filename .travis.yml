@@ -1,5 +1,5 @@
 language: nix
-sudo: false
+sudo: true
 script: ./nixcachebuild
 matrix:
   include:
