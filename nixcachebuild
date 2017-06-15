@@ -3,7 +3,7 @@
 set -ex
 
 function pkg() {
-  path=$(nix-build '<nixpkgs>' -A "$1")
+  path=$(nix-build '<dapphub>' -A "$1")
   nix-push --dest nix-cache "$path"
 }
 
