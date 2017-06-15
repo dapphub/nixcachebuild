@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Timestamp: Thu Jun 15 05:48:15 UTC 2017
+set -ex
+
+function pkg() {
+  path=$(nix-build '<nixpkgs>' -A "$1")
+  nix-push --dest nix-cache "$path"
+}
+
+nix-channel --add https://nix.dapphub.com/pkgs/dapphub
+nix-channel --update
+
+pkg seth
+pkg hsevm
