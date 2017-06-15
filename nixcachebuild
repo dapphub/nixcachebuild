@@ -2,13 +2,15 @@
 # Timestamp: Thu Jun 15 05:48:15 UTC 2017
 set -ex
 
+nix-channel --add https://nix.dapphub.com/pkgs/dapphub
+nix-channel --update
+
+export NIX_PATH=/nix/var/nix/profiles/per-user/`whoami`/channels
+
 function pkg() {
   path=$(nix-build '<dapphub>' -A "$1")
   nix-push --dest nix-cache "$path"
 }
-
-nix-channel --add https://nix.dapphub.com/pkgs/dapphub
-nix-channel --update
 
 pkg seth
 pkg hsevm
