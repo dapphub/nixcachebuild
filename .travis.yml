@@ -1,0 +1,16 @@
+language: nix
+sudo: false
+script: ./nixcachebuild
+matrix:
+  include:
+    - os: linux
+    - os: osx
+deploy:
+  on:
+    branch: master
+  local_dir: nix-cache
+  provider: s3
+  bucket: $S3_BUCKET
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  skip_cleanup: true
