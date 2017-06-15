@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Timestamp: Thu Jun 15 08:18:45 UTC 2017
+# Timestamp: Thu Jun 15 11:47:47 UTC 2017
 set -ex
 
 nix-channel --add https://nix.dapphub.com/pkgs/dapphub
@@ -13,4 +13,4 @@ function pkg() {
 }
 
 pkg seth
-pkg hsevm
+pkg dapp
