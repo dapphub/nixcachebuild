@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Timestamp: Thu Jun 15 11:47:47 UTC 2017
+# Timestamp: Sat Jun 17 14:08:56 UTC 2017
 set -ex
 
 nix-channel --add https://nix.dapphub.com/pkgs/dapphub
@@ -7,10 +7,5 @@ nix-channel --update
 
 export NIX_PATH=/nix/var/nix/profiles/per-user/`whoami`/channels
 
-function pkg() {
-  path=$(nix-build '<dapphub>' -A "$1")
-  nix-push --dest nix-cache "$path"
-}
-
-pkg seth
-pkg dapp
+path=$(nix-build '<dapphub>' -A dapp)
+nix-push --dest nix-cache "$path"
