@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -ex
 
-nix-channel --add https://nix.dapphub.com/pkgs/dapphub-staging dapphub-staging
+nix-channel --add https://nix.dapphub.com/pkgs/dapphub-staging
 nix-channel --update
 
 export NIX_PATH=/nix/var/nix/profiles/per-user/`whoami`/channels
