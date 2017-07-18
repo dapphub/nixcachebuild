@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Timestamp: Tue Jul 18 08:14:22 UTC 2017
+# Timestamp: Tue Jul 18 08:38:05 UTC 2017
 set -ex
 
 nix-channel --add https://nix.dapphub.com/pkgs/dapphub
